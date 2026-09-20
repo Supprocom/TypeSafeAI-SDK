@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\Directory.Packaging.props" />
+
+  <PropertyGroup>
+    <PackageId>Supprocom.TypeSafeAI.DependencyInjection</PackageId>
+    <AssemblyName>Supprocom.TypeSafeAI.DependencyInjection</AssemblyName>
+    <RootNamespace>Supprocom.TypeSafeAI.DependencyInjection</RootNamespace>
+    <Title>Supprocom TypeSafe AI SDK dependency injection integration</Title>
+    <Description>IServiceCollection and IHttpClientFactory integration for Supprocom.TypeSafeAI.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Http" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Supprocom.TypeSafeAI\Supprocom.TypeSafeAI.csproj" />
+  </ItemGroup>
+</Project>

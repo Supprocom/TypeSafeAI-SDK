@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-test-pack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+
+      - name: Restore
+        run: dotnet restore Supprocom.TypeSafeAI.slnx
+
+      - name: Verify formatting
+        run: dotnet format Supprocom.TypeSafeAI.slnx --verify-no-changes --no-restore
+
+      - name: Build
+        run: dotnet build Supprocom.TypeSafeAI.slnx --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test Supprocom.TypeSafeAI.slnx --configuration Release --no-build --collect:"XPlat Code Coverage" --results-directory TestResults
+
+      - name: Pack
+        run: dotnet pack Supprocom.TypeSafeAI.slnx --configuration Release --no-build --output artifacts
+
+      - name: Upload packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: nuget-packages
+          path: |
+            artifacts/*.nupkg
+            artifacts/*.snupkg
+
+      - name: Upload coverage
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: TestResults/**/coverage.cobertura.xml

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Supprocom.TypeSafeAI/Supprocom.TypeSafeAI.csproj" />
+  <Project Path="Supprocom.TypeSafeAI.DependencyInjection/Supprocom.TypeSafeAI.DependencyInjection.csproj" />
+  <Project Path="Supprocom.TypeSafeAI.Sample/Supprocom.TypeSafeAI.Sample.csproj" />
+  <Project Path="Supprocom.TypeSafeAI.Tests/Supprocom.TypeSafeAI.Tests.csproj" />
+</Solution>
