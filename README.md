@@ -274,5 +274,4 @@ checklist.
 
 ## License
 
-This project uses [AGPL-3.0-only](LICENSE). See [NOTICE](NOTICE) for the
-project notice and source offer.
+[MIT](LICENSE)

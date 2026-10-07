@@ -12,3 +12,10 @@ TestResults/
 *.snupkg
 *.user
 *.suo
+
+# Internal Codex working records
+/docs/internal/codex/
+
+# Repository agent instruction files are not project artifacts
+**/[Aa][Gg][Ee][Nn][Tt].[Mm][Dd]
+**/[Aa][Gg][Ee][Nn][Tt][Ss].[Mm][Dd]
